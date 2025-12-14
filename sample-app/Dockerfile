@@ -8,7 +8,7 @@ WORKDIR /app
 RUN groupadd -r webservice && useradd --no-log-init -r -g webservice webservice
 
 # this will install some packages
-RUN pip install networkx dash plotly
+RUN pip install networkx dash plotly "dash<3"
 
 # this will copy application code to working directory
 #COPY . /app/

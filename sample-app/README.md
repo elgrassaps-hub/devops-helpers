@@ -23,3 +23,10 @@ python3 GraphAnalysis.py obj_dependency_data.csv
 ## How to access
 
 Access Web UI on 8050 port. 
+
+
+Task 4 screenshot :
+![img_3.png](img_3.png)
+![img.png](img.png)
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
