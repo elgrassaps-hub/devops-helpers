@@ -1,2 +1,11 @@
 *.md
 Dockerfile*
+
+__pycache__/
+*.pyc
+.venv/
+.env
+.git/
+.idea/
+.DS_Store
+data/

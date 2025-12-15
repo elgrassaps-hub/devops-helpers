@@ -65,3 +65,11 @@ Task 7
 screenshot:
 ![img_19.png](img_19.png)
 ![img_20.png](img_20.png)
+
+Task 8 
+screenshot:
+Multistage is 436 MB comparing to initial 558 MB
+![img_21.png](img_21.png)
+![img_22.png](img_22.png)
+app working:
+![img_23.png](img_23.png)

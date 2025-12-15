@@ -1,17 +1,39 @@
 # Stage 1  - python deps
-FROM python:3.7-slim AS builder
+FROM python:3.12-slim AS builder
 WORKDIR /build
+
 RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
+
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
 COPY requirements.txt .
-RUN pip install --upgrade pip \
- && pip install --no-cache-dir -r requirements.txt
+RUN python -m pip install --upgrade pip \
+ && pip wheel --no-cache-dir --wheel-dir /wheels -r requirements.txt
 
 # Stage 2 - runtime
-FROM python:3.7-slim
+FROM python:3.12-slim
 WORKDIR /app
-COPY --from=builder /opt/venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+# limited user proviledges
+RUN groupadd -r webservice \
+ && useradd --no-log-init -r -g webservice webservice
+
+# install deps from wheels, then delete wheels in same layer
+COPY --from=builder /wheels /wheels
+RUN python -m pip install --no-cache-dir /wheels/* \
+ && rm -rf /wheels
+
 COPY GraphAnalysis.py obj_dependency_data.csv ./
+
+USER webservice:webservice
 EXPOSE 8050
-CMD ["python", "GraphAnalysis.py", "obj_dependency_data.csv"]
+
+ENTRYPOINT ["python", "GraphAnalysis.py"]
+CMD ["obj_dependency_data.csv"]
