@@ -96,3 +96,6 @@ Alpine version reduced to 312MB:
 ![img_29.png](img_29.png)
 
 ![img_30.png](img_30.png)
+
+Issues reduced to 2:
+![img_31.png](img_31.png)
