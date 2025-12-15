@@ -60,3 +60,8 @@ Containers:
 ![img_14.png](img_14.png)
 inspect:
 ![img_15.png](img_15.png)
+
+Task 7 
+screenshot:
+![img_19.png](img_19.png)
+![img_20.png](img_20.png)
