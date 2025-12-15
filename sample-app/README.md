@@ -68,6 +68,9 @@ screenshot:
 
 Task 8 
 screenshot:
+
+https://hub.docker.com/repositories/pskorodz
+
 Multistage is 436 MB comparing to initial 558 MB:
 ![img_21.png](img_21.png)
 ![img_22.png](img_22.png)
@@ -87,3 +90,9 @@ Dockerhub pushed
 https://hub.docker.com/repository/docker/pskorodz/sample-app-multistage/general
 ![img_24.png](img_24.png)
 ![img_25.png](img_25.png)
+
+Alpine version reduced to 312MB:
+![img_28.png](img_28.png)
+![img_29.png](img_29.png)
+
+![img_30.png](img_30.png)
