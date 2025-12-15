@@ -1,0 +1,17 @@
+# Stage 1  - python deps
+FROM python:3.7-slim AS builder
+WORKDIR /build
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+COPY requirements.txt .
+RUN pip install --upgrade pip \
+ && pip install --no-cache-dir -r requirements.txt
+
+# Stage 2 - runtime
+FROM python:3.7-slim
+WORKDIR /app
+COPY --from=builder /opt/venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+COPY GraphAnalysis.py obj_dependency_data.csv ./
+EXPOSE 8050
+CMD ["python", "GraphAnalysis.py", "obj_dependency_data.csv"]
