@@ -68,8 +68,22 @@ screenshot:
 
 Task 8 
 screenshot:
-Multistage is 436 MB comparing to initial 558 MB
+Multistage is 436 MB comparing to initial 558 MB:
 ![img_21.png](img_21.png)
 ![img_22.png](img_22.png)
+
+After: Layers reduced to 20, Vulnerabilities reduced to 23:
+![img_26.png](img_26.png)
+
+Before:
+22 layers, 95 vulnerabilities
+![img_27.png](img_27.png)
+
+
 app working:
 ![img_23.png](img_23.png)
+
+Dockerhub pushed
+https://hub.docker.com/repository/docker/pskorodz/sample-app-multistage/general
+![img_24.png](img_24.png)
+![img_25.png](img_25.png)
