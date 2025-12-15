@@ -41,3 +41,22 @@ Bind data vs existing:
 ![img_6.png](img_6.png)
 
 ![img_7.png](img_7.png)
+
+Task 6 screenshot:
+![img_10.png](img_10.png)
+
+volume:
+![img_11.png](img_11.png)
+![img_16.png](img_16.png)
+Writer:
+![img_12.png](img_12.png)
+mounted volume:
+![img_18.png](img_18.png)
+Reader:
+![img_13.png](img_13.png)
+mounted volume :
+![img_17.png](img_17.png)
+Containers:
+![img_14.png](img_14.png)
+inspect:
+![img_15.png](img_15.png)
